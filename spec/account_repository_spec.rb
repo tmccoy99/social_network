@@ -8,7 +8,7 @@ describe AccountRepository do
     @account2 = Account.new('great_account_name', 'great_email@talktalk.net', 2)
     @repo = AccountRepository.new
 
-    sql = File.read("spec/account_test_data_seed.sql")
+    sql = File.read("spec/test_data_seed.sql")
     connection = PG.connect({ host: '127.0.0.1', dbname: "social_network" })
     connection.exec(sql)
   end
