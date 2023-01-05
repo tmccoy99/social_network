@@ -12,8 +12,11 @@ class AccountRepository
     convert_to_account(record)
   end
 
-  def create
-
+  def create(account)
+    query = "INSERT INTO accounts (username, email_address) " \
+    "VALUES ($1, $2)"
+    DatabaseConnection.exec_params(query, 
+    [account.username, account.email_address])
   end
 
   def delete
