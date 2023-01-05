@@ -19,8 +19,9 @@ class AccountRepository
     [account.username, account.email_address])
   end
 
-  def delete
-
+  def delete(id)
+    query = "DELETE FROM accounts WHERE id = $1"
+    DatabaseConnection.exec_params(query, [id])
   end
 
   private
