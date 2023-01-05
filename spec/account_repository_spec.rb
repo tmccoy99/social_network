@@ -17,4 +17,9 @@ describe AccountRepository do
     expect(@repo.all).to eq [@account1, @account2]
   end
 
+  it "#find is given integer argument and returns account with " \
+  "corresponding id" do
+    expect(@repo.find(1)).to eq @account1
+  end
+
 end
