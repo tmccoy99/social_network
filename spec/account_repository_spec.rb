@@ -22,4 +22,9 @@ describe AccountRepository do
     expect(@repo.find(1)).to eq @account1
   end
 
+  it "#create is given account argument and adds to accounts table" do
+    account3 = Account.new('mark123', 'mark@hotmail.co.uk')
+    @repo.create(account3)
+    expect(@repo.all).to eq [@account1, @account2, @account3]
+  end
 end
