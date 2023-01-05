@@ -27,4 +27,10 @@ describe AccountRepository do
     @repo.create(account3)
     expect(@repo.all).to eq [@account1, @account2, account3]
   end
+
+  it "#delete is given integer argument and deletes record with" \
+  "corresponding id from SQL database" do
+    @repo.delete(1)
+    expect(@repo.all).to eq [@account2]
+  end
 end
